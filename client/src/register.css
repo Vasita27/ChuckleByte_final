@@ -1,0 +1,86 @@
+.register {
+  height: 160vh;
+  /* Full height */
+  background: linear-gradient(to bottom right, #EEEEEE 50%, #393E46 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  color: black;
+  border: 5px solid;
+  border-color: black transparent white transparent;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #100f10;
+  border-radius: 5px;
+  font-size: 16px;
+  color: black;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    width: 360px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .register-container {
+    width: 500px;
+  }
+}
+/* Scrollable form container */

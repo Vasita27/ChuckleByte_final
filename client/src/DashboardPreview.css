@@ -1,0 +1,297 @@
+.dashboard.light {
+  position: relative;
+  height: 100%;
+ top:50px
+}
+.dashboard.dark{
+  height: fit-content;
+ top:70px
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start; /* Align buttons to the left */
+  margin-bottom: 20px; /* Space between buttons and content box */
+  flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+.square-button {
+  width: 150px; /* Width of buttons */
+  margin-right: 10px; /* Space between buttons */
+}
+.todo-list {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding */
+}
+
+.todo-list li {
+  display: flex; /* Use flexbox to align items in a row */
+  align-items: center; /* Center items vertically */
+  margin: 5px 0; /* Optional: Add some vertical spacing between items */
+}
+.about-us-heading.dark h2{
+  color: #fff;
+}
+
+.todo-list input[type="checkbox"] {
+  margin-right: 10px; /* Add some space between checkbox and label */
+}
+input[type="checkbox"]{
+  accent-color: #393E46;
+}
+
+/* Existing styles */
+.content-box {
+  text-align: left; /* Ensure text is left-aligned */
+  padding: 10px; /* Add padding for better spacing */
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.left-section {
+  flex-basis: 50%; /* Take half the width */
+  text-align: left;
+}
+
+.right-section {
+  flex-basis: 50%; /* Take half the width */
+  display: flex;
+  justify-content: center;
+}
+.btn.dark{
+  background-color: #929AAB;
+  color: #393E46;
+}
+.btn{
+  background-color: #929AAB;
+}
+.btn:hover{
+  background-color: #727885;
+}
+.dashboard-image {
+  max-width: 100%; /* Ensure image fits within the right section */
+  height: auto;
+}
+.content-box {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 400px; /* Maximum height, adjust as needed */
+  width: 470px; /* Set width to match three buttons */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  margin-right: 20px;
+  border: 2px solid #bfc5d1; /* Border around the content box */
+  overflow: auto; /* Enable scrolling if content exceeds the box */
+  word-wrap: break-word; /* Ensure long words break into the next line */
+}
+.service-card.dark{
+  background-color: #929AAB;
+  color:black;
+}
+
+.content-box.dark{
+  background-color: #929AAB;
+  color: black;
+}
+.progress-bar{
+  background-color: #393E46;
+}
+.completed {
+  text-decoration: line-through;
+  color: gray; /* You can adjust this color as needed */
+}
+.todo-list {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove padding */
+}
+
+/* Left-align content in Project Status */
+.content-box {
+  text-align: left !important;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  justify-items: flex-start; /* Align text to the left */
+}
+
+
+.image-container {
+  display:flex;
+   /* Center image vertically */
+}
+
+.dashboard-image {
+  width: 300px; /* Width of the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: round corners */
+}
+
+/* For larger screens between 1030px and 1400px */
+@media (min-width: 1030px) and (max-width: 1400px) {
+  .content-box {
+    margin-left: 70px !important;
+  }
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column; /* Stack everything vertically */
+    align-items: center; /* Center everything */
+  }
+  .about-us-heading h2 {
+    display: inline-block;
+    position: relative;
+    padding:30px; /* Space around the text *//* Background color for text (optional) */
+    z-index: 3; /* Ensure text appears above the lines */
+    top: 8px;
+    
+  }
+  .square-button {
+    width: 120px; /* Adjust button width for smaller screens */
+  }
+
+  .content-box {
+    padding: 15px; /* Reduce padding for smaller screens */
+    height: auto; /* Allow height to adjust on smaller screens */
+    width: auto; /* Make width flexible */
+    margin-bottom: 20px; /* Add space below content box */
+  }
+
+  .right-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add space between content and image */
+  }
+.about-us-heading::before,
+.about-us-heading::after {
+  content: '';
+  position: absolute;
+  width: 30%; /* Length of the line */
+  height: 5px; /* Adjust thickness as needed */
+  background-color: #929AAB; /* Blue color */
+  z-index: 0; /* Place behind the text */
+}
+
+  .dashboard-image {
+    width: 200px; /* Adjust image size for smaller screens */
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .square-button {
+    width: 100%; /* Full width on very small screens */
+    margin: 10px 0; /* Add vertical margin for gap between buttons */
+  }
+  .about-us-heading::before,
+.about-us-heading::after {
+  content: '';
+  position: absolute;
+  width: 30%; /* Length of the line */
+  height: 5px; /* Adjust thickness as needed */
+  background-color: #929AAB; /* Blue color */
+  z-index: 0; /* Place behind the text */
+}
+  .content-box {
+    width: 100%; /* Full width content box on smaller screens */
+  }
+}
+.actual.dark{
+  background-color: #393E46;
+}
+.actual.light{
+  background-color: #393E46;
+}
+.nav-link{
+  color: white !important;
+  font-size: 20px;
+}
+.nav-link:hover{
+  color:#929AAB
+}
+.navbar{
+  padding: 0px;
+}
+/* Example CSS */
+html {
+  scroll-behavior: smooth; /* Optional, ensures all anchor links have smooth scroll */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar stays on top */
+}
+
+section {
+  padding-top: 70px; /* To avoid navbar overlapping */
+  margin-bottom: 20px; /* Adds spacing between sections */
+}
+
+.about-us-heading {
+  position: relative;
+  
+  text-align: center;
+  /* Adjust as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Style for the heading with line */
+.about-us-heading h2 {
+  display: inline-block;
+  position: relative;
+  padding: 20px 20px; /* Space around the text *//* Background color for text (optional) */
+  z-index: 1; /* Ensure text appears above the lines */
+  top: 8px;
+}
+
+/* Style for the line */
+.about-us-heading::before,
+.about-us-heading::after {
+  content: '';
+  position: absolute;
+  width: 40%; /* Length of the line */
+  height: 5px; /* Adjust thickness as needed */
+  background-color: #929AAB; /* Blue color */
+  z-index: 0; /* Place behind the text */
+}
+
+/* Line on the left */
+.about-us-heading::before {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Line on the right */
+.about-us-heading::after {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media((min-width:300px) and (max-width:1030px)){
+  .about-us-heading::before,
+.about-us-heading::after {
+  content: '';
+  position: absolute;
+  width: 30%; /* Length of the line */
+  height: 5px; /* Adjust thickness as needed */
+  background-color: #929AAB; /* Blue color */
+  z-index: 0; /* Place behind the text */
+}
+}

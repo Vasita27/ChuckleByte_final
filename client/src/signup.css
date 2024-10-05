@@ -1,0 +1,73 @@
+/* signup.css */
+
+.signup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  color: black; /* Black text color */
+  
+ border: 2px solid black;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black; /* Ensure heading text is black */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black; /* Black label text */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #100f10;
+  border-radius: 5px;
+  font-size: 16px;
+  color: black; /* Black input text */
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #393E46;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.signup{
+ 
+    height: 100vh; /* Make the body fill the viewport */
+    background: linear-gradient(to bottom right, #EEEEEE 50%, #393E46 50%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}

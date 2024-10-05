@@ -1,0 +1,192 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh; /* Adjusted height */
+    position: relative;
+    top: -180px;
+   
+}
+
+.carousel-cards {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    width: 240px; /* Default width for all cards */
+    height: 350px; /* Increased height for the image and text */
+    background-color: #f5f5f5;
+    margin: 0 20px; /* Margin for gap between cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+    flex-direction: column; /* Stack image and info vertically */
+}
+
+.card.left {
+    transform: translateX(-120%) scale(0.9); /* Smaller size for left card */
+}
+
+.card.center {
+    transform: translateX(0) scale(1.1); /* Slightly larger center card */
+    z-index: 2; /* Bring the center card forward */
+}
+
+.card.right {
+    transform: translateX(120%) scale(0.9); /* Smaller size for right card */
+}
+
+.carousel-button {
+    background-color: transparent; /* No background color */
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    z-index: 10; /* Ensure the arrows are above other elements */
+    opacity: 1;
+}
+
+.carousel-button.left {
+    position: absolute;
+    left: -50px; /* Place the arrow left of the card */
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; /* Make sure the arrow is visible */
+}
+
+.carousel-button.right {
+    position: absolute;
+    right: -50px; /* Place the arrow right of the card */
+    top: 50%;
+    transform: translateY(-50%);
+    color: black; /* Make sure the arrow is visible */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%; /* Ensure content takes up the full height of the card */
+    position: relative; /* This keeps the content centered even with the buttons */
+}
+
+.card-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    font-size: 16px;
+    color: #333;
+}
+
+.card-info h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.card-info p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+@media((min-width:530px) and (max-width:570px)){
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50vh; /* Adjusted height */
+        position: relative;
+        top: -180px;
+       
+    }
+    
+}
+@media((min-width:571px) and (max-width:600px)){
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 60vh; /* Adjusted height */
+        position: relative;
+        top: -180px;
+       
+    }
+
+}
+@media((min-width:800px) and (max-width:880px)){
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 55vh; /* Adjusted height */
+        position: relative;
+        top: -180px;
+       
+    }
+
+}
+@media(max-width:500px){
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 70vh; /* Adjusted height */
+        position: relative;
+        top: -180px;
+       
+    }
+
+}
+@media((min-width:1000px) and (max-width:1030px)){
+    .carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 60vh; /* Adjusted height */
+        position: relative;
+        top: -180px;
+       
+    }
+
+}
+.left.dark{
+    color: white;
+}
+.right.dark{
+    color: white;
+}
+.card.dark{
+    background-color: #929AAB;
+}
+.card.light{
+    background-color:#F7F7F7;
+}
+.content.dark{
+    color: black;
+}

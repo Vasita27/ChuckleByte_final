@@ -1,0 +1,84 @@
+/* Light Theme Styles */
+.App.light {
+  background-color: #EEEEEE;
+
+  transition: all 0.3s ease;
+  
+}
+.App.dark{
+  background-color: #393E46;
+ ;
+  transition: all 0.3s ease;
+}
+body {
+  font-family: 'Iceland', sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+/* App.css */
+header {
+  position: relative;
+  z-index: 1000; /* Ensure it is on top of other elements */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 10px; /* Add some padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.theme-toggle {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* App.css or HeroSection.css */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Dark Theme Styles */
+.App.dark {
+  background-color: #1e1e1e;
+  height: 100vh;
+  color: #ffffff;
+ 
+}
+
+button.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+button.theme-toggle:hover {
+  background-color: #0056b3;
+}

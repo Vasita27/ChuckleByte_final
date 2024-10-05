@@ -1,0 +1,77 @@
+.internship-container {
+    display: flex; /* Use flexbox to align items side by side */
+    align-items: center; /* Center align items vertically */
+    justify-content: space-between; /* Space between elements */
+    padding: 20px; /* Add padding */
+  }
+  
+  .image-section {
+    flex: 1; /* Allow this section to grow */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+  }
+  
+  .image-section img {
+    width: 400px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .text-section {
+    flex: 1; /* Allow this section to grow */
+    padding: 20px; /* Add padding */
+  }
+  
+  .text-section h2 {
+    margin-bottom: 15px; /* Space below heading */
+  }
+  
+  .text-section p {
+    margin-bottom: 20px; /* Space below paragraph */
+    font-size: 16px; /* Font size */
+    line-height: 1.5; /* Line height for readability */
+  }
+  
+  .button-container {
+    display: flex; /* Align buttons in a row */
+    gap: 15px; /* Space between buttons */
+  }
+  .text-section.dark h2{
+    color: white;
+  }
+  .text-section.dark p{
+    color: white;
+  }
+  .apply-button,
+  .stories-button {
+    background-color: #929AAB; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Padding inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .apply-button:hover,
+  .stories-button:hover {
+    background-color: #676f7f; /* Darken background color on hover */
+  }
+  
+  /* Media query for small screens */
+  @media (max-width: 768px) {
+    .internship-container {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align items to the start */
+    }
+  
+    .image-section {
+      display: none; /* Hide the image section */
+    }
+  
+    .text-section {
+      width: 100%; /* Allow text section to take full width */
+      padding: 10px; /* Adjust padding for smaller screens */
+    }
+  }
+  

@@ -1,0 +1,493 @@
+/* General Styling for the Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    width: 80%;
+    margin: 30px auto;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+
+}
+.hero-section.dark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  margin: 30px auto;
+
+}
+.container-fluid.hero-container.dark{
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+.container-fluid.hero-container.light{
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+.custom-button.dark{
+  background-color: white;
+  color: black;
+}
+
+/* Header Styling */
+.header {
+    background-color: #f0f0f0;
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Header Text */
+h1 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Columns Styling */
+.columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Column Content Styling */
+.column {
+    width: 45%; /* Each column takes 45% of the width */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Headings inside Columns */
+.left-column h2, .right-column h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Text */
+p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.cta-button, .login-button, .signup-button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: blue;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover, .login-button:hover, .signup-button:hover {
+    background-color: darkblue;
+}
+
+/* Auth Buttons Styling (Login and Signup) */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-button {
+    background-color: #6c757d;
+}
+
+.signup-button {
+    background-color: #28a745;
+}
+
+.login-button:hover {
+    background-color: #5a6268;
+}
+
+.signup-button:hover {
+    background-color: #218838;
+}
+
+/* Theme-specific Styling for Dark Mode */
+.hero-section.dark {
+    background-color: #1e1e1e;
+    color: #f7f7f7;
+}
+
+.columns.dark .left-column, .columns.dark .right-column {
+    background-color: #333;
+    border-color: #444;
+    color: #f7f7f7;
+}
+
+.left-column.dark h2, .right-column.dark h2, p.dark {
+    color: #f7f7f7;
+}
+
+/* Theme-specific Styling for Light Mode */
+.hero-section.light {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.columns.light .left-column, .columns.light .right-column {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+
+/* Adjusting Image Size in Left Column */
+.left-image {
+    margin-top: 10px;
+    height: 180px;
+    width: 200px;
+}
+
+/* Adjustments to Center Column Content */
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.row{
+    height: 50vh;
+}
+/* Container for Hero Section */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* First row to take up half the viewport height */
+  .first-row {
+    background-color: #929AAB;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .first-row.dark{
+    background-color: #36373a;
+    height: 50vh;
+   
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+  }
+  .container-fluid{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+  .left-col.dark{
+    background-color: #393E46;
+    border: 1px solid white;
+  }
+  .right-col.dark{
+    background-color: #404348;
+    border: 1px solid white;
+  }
+  .hero-container.dark{
+    height: 100vh;
+  }
+  .lead.dark{
+    color: white;
+  }
+  .headertext{
+    text-align: left;
+  }
+  .sub{
+    text-align: left;
+  }
+  .intern{
+    width: 200px; /* Adjust width as per need */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px; /* Add padding for better spacing inside */
+  background-color: #EEEEEE; /* Customize button color */
+  color: black; /* Text color */
+  border: none; /* Remove default border */
+  font-size: 16px;
+  cursor: pointer;
+  }
+  .intern2{
+    position: relative;
+    left: -80px;
+    width: 200px; /* Adjust width as per need */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px; /* Add padding for better spacing inside */
+  background-color: #EEEEEE; /* Customize button color */
+  color: black; /* Text color */
+  border: none; /* Remove default border */
+  font-size: 16px;
+  cursor: pointer;
+  }
+  .headertext.dark{
+    color: white;
+  }
+  .row.one{
+    text-align: left;
+    margin-left: 10px;
+  }
+  /* Second row to take up the other half */
+  .second-row {
+    height: 50vh;
+    background-color: #FAEBCD;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .left-col{
+    background-color: #EEEEEE;
+  }
+  .right-col{
+    background-color: #F7F7F7;
+  }
+  
+  /* Left and Right Columns */
+  .left-col, .right-col {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left-col h2, .right-col h2 {
+    margin-bottom: 10px;
+  }
+  
+  .left-col p, .right-col p {
+    margin-bottom: 20px;
+  }
+  
+  img {
+    height: 200px;
+    width: 200px;
+  }
+  .intern{
+    background-color: #929AAB;
+  }
+/* Theme Toggle Switch */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .theme-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #e3920e; /* sun color */
+  }
+  /* HeroSection.css */
+  .App {
+    position: relative; /* Allow absolute positioning for the toggle switch */
+  }
+  /* HeroSection.css */
+
+  
+.button-container {
+  align-items: center !important;
+  justify-content: center !important;
+  display: flex !important;
+  justify-items: center !important;
+  align-content: center !important;
+   /* Adjust spacing between the buttons */
+}
+.top-left-image-container {
+  position: absolute;
+  top: 20px; /* Adjust this value to position the image vertically */
+  left: 20px; /* Adjust this value to position the image horizontally */
+}
+
+.top-left-image {
+  width: 100px;  /* Set the desired size */
+  height: 100px; /* Ensure it stays circular */
+  border-radius: 50%; /* Makes the image circular */
+  border: 2px solid white; /* Optional: Add a border */
+}
+
+
+.custom-button {
+  width: 100px; /* Adjust width as per need */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px; /* Add padding for better spacing inside */
+  background-color: #EEEEEE; /* Customize button color */
+  color: black; /* Text color */
+  border: none; /* Remove default border */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Change color on hover */
+  transition: background-color 0.3s ease;
+}
+.custom-button.one{
+  margin: 5px;
+}
+.custom-button{
+  margin: 20px;
+}
+
+
+  
+  .toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-items: end; /* Align to the right */
+    padding: 20px;
+  }
+  
+  .theme-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .hidden {
+    opacity: 0; /* Hide the icon */
+  }
+  
+  .toggle-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align to the right */
+  }
+  
+  .theme-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+  }
+  
+  .hidden {
+    opacity: 0; /* Hide the icon */
+  }
+  
+  .toggle-switch {
+    width: 60px;
+    height: 30px;
+    background-color: #ccc; /* Default background */
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-switch.toggled {
+    background-color: #4caf50; /* Background color when toggled */
+  }
+  
+  .toggle-switch-slider {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-switch.toggled .toggle-switch-slider {
+    transform: translateX(30px); /* Move the slider when toggled */
+  }
+  @media ((min-width:800px)and (max-width: 1300px) ){
+    .hero-container {
+      padding: 10px; /* Reduce padding on mobile */
+    }
+  
+    .toggle-wrapper {
+      justify-content: center; /* Center the toggle switch on mobile */
+      margin-bottom: 10px; /* Space below the toggle switch */
+    }
+  
+    h1 {
+      font-size: 1.5rem; /* Adjust font size for the header */
+      text-align: center; /* Center the header text */
+    }
+  
+    .lead {
+      font-size: 1rem; /* Adjust font size for the lead text */
+      text-align: center; /* Center the lead text */
+    }
+    .intern2{
+      position: relative;
+      left: -10px;
+      width: 200px; /* Adjust width as per need */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px; /* Add padding for better spacing inside */
+    background-color: #EEEEEE; /* Customize button color */
+    color: black; /* Text color */
+    border: none; /* Remove default border */
+    font-size: 16px;
+    cursor: pointer;
+    }
+  
+    .left-col, .right-col {
+      flex-basis: 100%; /* Stack columns on mobile */
+      text-align: center; /* Center text in columns */
+    }
+  
+    .left-col img, .right-col img {
+      width: 80%; /* Reduce image size on mobile */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    .toggle-switch {
+      width: 50px; /* Smaller toggle switch on mobile */
+      height: 25px; /* Smaller toggle switch on mobile */
+    }
+  
+    .toggle-switch-slider {
+      width: 22px; /* Smaller slider */
+      height: 22px; /* Smaller slider */
+    }
+  }
+ @media (max-width:768px){
+  .intern2{
+    position: relative;
+    left: 25px;
+    width: 200px; /* Adjust width as per need */
+  border-radius: 20px; /* Rounded corners */
+  padding: 10px; /* Add padding for better spacing inside */
+  background-color: #EEEEEE; /* Customize button color */
+  color: black; /* Text color */
+  border: none; /* Remove default border */
+  font-size: 16px;
+  cursor: pointer;
+  }
+  .last{
+    margin-bottom: 0px;
+  }
+ }

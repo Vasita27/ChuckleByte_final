@@ -1,0 +1,104 @@
+.client-gathering-section {
+  padding-left: 30px;
+  background-color: var(--background);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.client-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.client-form input,
+.client-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.submit-button {
+  padding: 1rem 2rem;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--button-hover);
+}
+
+.client-gathering-container {
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center align items vertically */
+  justify-content: space-between; /* Space between elements */
+  padding: 20px; /* Add some padding if needed */
+}
+
+.client-gathering-section {
+  flex: 1; /* Allow this section to grow and take available space */
+  margin-right: 20px; /* Space between form and image */
+}
+
+.image-container {
+  flex: 1; /* Allow the image section to take equal space */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+}
+
+.image-container img {
+  width: 80%; /* Set to a percentage of the container */
+  max-width: 600px; /* Set a maximum width if needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Specific styles for input and textarea */
+.client-form input,
+.client-form textarea {
+  border: 2px solid #929AAB; /* Set border color */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px; /* Add padding for better spacing */
+  width: 100%; /* Make inputs full width */
+  margin-bottom: 15px; /* Space between input fields */
+  font-size: 16px; /* Increase font size */
+  box-shadow: none; /* Remove default shadow */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+.client-gathering-section.dark h2{
+  color:#EEEEEE
+}
+.client-form input:focus,
+.client-form textarea:focus {
+  border-color: #0056b3; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+.submit-button.dark{
+  background-color: #EEEEEE;
+  color: black;
+}
+.submit-button.light{
+  background-color: #929AAB;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .image-container {
+    display: none; /* Hide the image container on small screens */
+  }
+
+  .client-gathering-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+  }
+}

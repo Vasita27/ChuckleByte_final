@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import './DashboardPreview.css';
 import Success from './Success';
+import { useLocation } from 'react-router-dom';
 import './Success.css';
 import Footer from './Footer';
-
+import axios from 'axios';
 import Services from './Services';
 import ApplyForInternship from './ApplyForInternship';
 import ClientGatheringSection from './ClientGathering';
@@ -17,11 +18,13 @@ const scrollToSection = (sectionId) => {
   }
 };
 const DashboardPreview = ({ theme, toggleTheme }) => {
+  const [internshipIds, setInternshipIds] = useState([]);
   
   const [isToggled, setIsToggled] = useState(false);
   const [content, setContent] = useState('Select a button to see content here.');
   const [image, setImage] = useState('./images/undraw_private_data_re_4eab.svg');
-
+  const location = useLocation();
+  const username = location.state?.username || "Guest";
   // State for todos without strike-through tracking
   const [todos, setTodos] = useState([
     { text: 'Complete the project setup', completed: false },
@@ -35,7 +38,7 @@ const DashboardPreview = ({ theme, toggleTheme }) => {
     toggleTheme();
   };
 
-  const handleButtonClick = (buttonName) => {
+  const handleButtonClick = async (buttonName) => {
     switch (buttonName) {
       case 'Project Status':
         setContent(
@@ -75,15 +78,25 @@ const DashboardPreview = ({ theme, toggleTheme }) => {
         );
         setImage('./images/undraw_private_data_re_4eab.svg');
         break;
-      case 'Profile':
-        setContent(
-          <div className="project-status-content">
-            <h4>Project Status</h4>
-            <p>You clicked Project Status!</p>
-            {/* You can add more content related to the project status here */}
-          </div>
-        );
-        setImage('./images/undraw_project_complete_lwss.svg');
+        case 'Profile':
+        // Fetch internships by username
+        try {
+          
+          
+          // Set the content to display username and applied internship IDs
+          setContent(
+           "Profile-Explore various functionalities available , do internships and expand your profile"
+          );
+          setImage('./images/undraw_project_complete_lwss.svg'); // Set an image for the profile section
+        } catch (error) {
+          console.error('Error fetching internships:', error);
+          setContent(
+            <div className="project-status-content">
+              <h4>Error fetching internships</h4>
+              <p>{error.message}</p> {/* Display the error message */}
+            </div>
+          );
+        }
         break;
         case 'Notifications':
           setContent(
@@ -233,7 +246,7 @@ const DashboardPreview = ({ theme, toggleTheme }) => {
       <div className={`about-us-heading ${theme}`} style={{ padding: '5px' }} id="internship">
         <h2>Internships</h2>
       </div>
-      <ApplyForInternship theme={theme} toggleTheme={toggleTheme}/>
+      <ApplyForInternship theme={theme} toggleTheme={toggleTheme} username={username}/>
 
       <div className={`about-us-heading ${theme}`} style={{ padding: '5px' }} id="services">
         <h2>Services</h2>

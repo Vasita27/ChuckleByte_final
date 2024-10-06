@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import React from 'react';
 import './Application.css';
+import register from "./RegisterForm";
+import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-
+import { useNavigate } from 'react-router-dom';
 const internships = [
   {
     id: 'INT001',
@@ -56,12 +58,17 @@ const internships = [
 ];
 
 const ApplicationPage = ({ theme, toggleTheme }) => {
+  const location=useLocation();
     const [isToggled, setIsToggled] = useState(false);
+    const navigate=useNavigate();
+    const queryParams = new URLSearchParams(location.search);
+  const username = queryParams.get('username'); 
     
-  const handleRegister = (internshipId) => {
-    // Handle registration logic here (e.g., send to backend)
-    console.log(`Registered for internship: ${internshipId}`);
-  };
+    const handleRegister = (internshipId) => {
+      console.log(internshipId);
+      navigate(`/register/${internshipId}/${username}`); // Pass the internship ID as a route parameter
+    };
+    
   const handleToggle = () => {
     setIsToggled((prevState) => !prevState);
     toggleTheme();

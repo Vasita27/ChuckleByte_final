@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import Axios
 import './register.css'; // Scoped styles for register form
-import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
+  const { internshipId,user} = useParams();
+  console.log(internshipId,user) // Get the internship ID from the route parameters
   const [formData, setFormData] = useState({
-    name: '',
+    name:'',
     email: '',
-    internshipId: '',
+    internshipId: internshipId || '', // Set the internshipId from params
     phone: '',
     college: '',
     department: '',
     resume: null,
   });
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState(''); // State for success message
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -24,16 +28,41 @@ const RegisterForm = () => {
     setFormData({ ...formData, resume: e.target.files[0] });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     // Example error validation
-    if (!formData.name || !formData.email || !formData.internshipId || !formData.phone || !formData.college || !formData.department) {
+    if (!formData.name || !formData.email || !formData.internshipId || !formData.phone || !formData.college || !formData.department || !formData.resume) {
       setError('Please fill in all required fields.');
+      return; // Stop further execution
     } else {
       setError('');
-      console.log('Registration form submitted:', formData);
+    }
+
+    // Create a FormData object for file upload
+    const formDataToSend = new FormData();
+    for (const key in formData) {
+      formDataToSend.append(key, formData[key]);
+    }
+
+    try {
+      // Send the form data to the backend API
+      const response = await axios.post('http://localhost:5000/api/register', formDataToSend, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      // Handle success
+      setSuccess('Registration successful!');
+      alert("Registration Successful");
+      console.log('Response:', response.data);
       // Navigate to success page or dashboard
-      navigate("/dashboard");
+      navigate("/dashboard",{ state: { user } });
+    } catch (error) {
+      // Handle error
+      console.error('Error during registration:', error);
+      setError('Registration failed. Please try again.');
     }
   };
 
@@ -42,6 +71,7 @@ const RegisterForm = () => {
       <div className="register-container">
         <h2>Internship Registration</h2>
         {error && <p className="error-message">{error}</p>}
+        {success && <p className="success-message">{success}</p>} {/* Display success message */}
         <div className="scrollable-container">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -49,7 +79,7 @@ const RegisterForm = () => {
               <input
                 type="text"
                 name="name"
-                value={formData.name}
+                value={user}
                 onChange={handleChange}
                 required
               />
@@ -72,6 +102,7 @@ const RegisterForm = () => {
                 value={formData.internshipId}
                 onChange={handleChange}
                 required
+                readOnly // Optionally, make it read-only
               />
             </div>
             <div className="form-group">

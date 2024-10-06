@@ -3,7 +3,7 @@ import './ApplyForInternship.css';
 import { useNavigate } from 'react-router-dom';
 import { scrollToSection } from './DashboardPreview';
 import { useState } from 'react';
-const ApplyForInternship = ({ theme, toggleTheme }) => {
+const ApplyForInternship = ({ theme, toggleTheme ,username }) => {
   const navigate=useNavigate();
   const handleApply = () => {
     // Scroll to the success stories section
@@ -24,7 +24,7 @@ const ApplyForInternship = ({ theme, toggleTheme }) => {
           Don’t miss this chance to accelerate your career—apply now and be part of our dynamic team!
         </p>
         <div className="button-container">
-        <button onClick={() => window.location.href = '/application'} className='apply-button'>Apply Now</button>
+        <button onClick={() => window.location.href = `/application?username=${encodeURIComponent(username)}`} className='apply-button'>Apply Now</button>
           <button className="stories-button" onClick={() => scrollToSection('success')}>Read Success Stories</button>
         </div>
       </div>

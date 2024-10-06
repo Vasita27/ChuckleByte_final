@@ -1,5 +1,8 @@
+// ClientGatheringSection.js
+
 import React, { useState } from 'react';
 import './ClientGathering.css';
+import axios from 'axios'; // Import Axios
 
 const ClientGatheringSection = ({ theme, toggleTheme }) => {
   const [formData, setFormData] = useState({
@@ -13,10 +16,18 @@ const ClientGatheringSection = ({ theme, toggleTheme }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Process the form data here (send to backend)
-    console.log(formData);
+    
+    try {
+      const response = await axios.post('http://localhost:5000/api/client-gathering', formData);
+      console.log(response.data); // Handle success
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', company: '', message: '' }); // Reset the form
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message.');
+    }
   };
 
   return (

@@ -91,10 +91,7 @@ input[type="checkbox"]{
   overflow: auto; /* Enable scrolling if content exceeds the box */
   word-wrap: break-word; /* Ensure long words break into the next line */
 }
-.service-card.dark{
-  background-color: #929AAB;
-  color:black;
-}
+
 
 .content-box.dark{
   background-color: #929AAB;
@@ -139,6 +136,9 @@ input[type="checkbox"]{
   .content-box {
     margin-left: 70px !important;
   }
+}
+.project-status-content{
+  color: black;
 }
 
 /* Media Queries for Smaller Screens */

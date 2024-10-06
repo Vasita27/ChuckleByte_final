@@ -1,4 +1,6 @@
+// src/components/SignupForm.js
 import React, { useState } from 'react';
+import axios from 'axios';
 import './signup.css'; // Scoped styles for signup form
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +18,7 @@ const SignupForm = () => {
     return strongPasswordRegex.test(password);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!isPasswordStrong(password)) {
@@ -30,10 +32,23 @@ const SignupForm = () => {
     }
 
     setError('');
-    console.log('Signup form submitted:', { name, username, email, password }); // Include username in console log
 
-    // Redirect to the login page or any other route after successful signup
-    navigate("/dashboard");
+    try {
+      // Send a POST request to the signup endpoint
+      const response = await axios.post('http://localhost:5000/signup', {
+        name,
+        username,
+        email,
+        password,
+      });
+
+      console.log('Signup successful:', response.data);
+      // Redirect to the login page or any other route after successful signup
+      navigate('/dashboard', { state: { username } });
+    } catch (err) {
+      // Handle error from the API
+      setError(err.response?.data?.message || 'Signup failed. Please try again.');
+    }
   };
 
   return (
@@ -42,15 +57,6 @@ const SignupForm = () => {
         <h2>Signup</h2>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
           <div className="form-group">
             <label>Username</label> {/* New username label */}
             <input

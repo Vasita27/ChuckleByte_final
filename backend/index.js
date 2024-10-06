@@ -22,9 +22,7 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 const JWT_SECRET = 'your_jwt_secret';  // Secret key for JWT
 
-app.use(cors({
-    origin: 'https://chucklebyte.onrender.com' // Replace with your frontend URL
-}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

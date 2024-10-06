@@ -20,7 +20,7 @@ const ClientGatheringSection = ({ theme, toggleTheme }) => {
     e.preventDefault();
     
     try {
-      const response = await axios.post('http://localhost:5000/api/client-gathering', formData);
+      const response = await axios.post('https://finaltask-c-2.onrender.com/api/client-gathering', formData);
       console.log(response.data); // Handle success
       alert('Message sent successfully!');
       setFormData({ name: '', email: '', company: '', message: '' }); // Reset the form

@@ -22,12 +22,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
   // Secret key for JWT
 
-app.use(cors(
-  {
-    origin:["https://final-task-chucklebyte-qohm.vercel.app"],
-    methods:["POST","GET"],
-    credentials:true
-));
+app.use(cors({
+  origin: ["https://final-task-chucklebyte-qohm.vercel.app"],
+  methods: ["POST", "GET"],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'], // Include any other headers your app uses
+}));
+app.options('*', cors());  // Allow all OPTIONS requests
+
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

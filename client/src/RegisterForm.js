@@ -47,7 +47,7 @@ const RegisterForm = () => {
 
     try {
       // Send the form data to the backend API
-      const response = await axios.post('https://finaltask-c-2.onrender.com/api/register', formDataToSend, {
+      const response = await axios.post('http://localhost:5000/api/register', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

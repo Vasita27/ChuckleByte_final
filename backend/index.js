@@ -19,8 +19,8 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
 const app = express();
-const PORT = process.env.PORT || 10000;
-const JWT_SECRET = 'your_jwt_secret';  // Secret key for JWT
+const PORT = process.env.PORT || 5000;
+  // Secret key for JWT
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -53,19 +53,7 @@ const clientSchema = new mongoose.Schema({
   // Create a model
 const Client = mongoose.model('Client', clientSchema);
 // Middleware to verify JWT
-const verifyToken = (req, res, next) => {
-    const token = req.headers['authorization'];
-    if (!token) {
-        return res.status(403).json({ message: 'A token is required for authentication' });
-    }
-    try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = decoded;  // Attach user data to the request
-    } catch (err) {
-        return res.status(401).json({ message: 'Invalid Token' });
-    }
-    next();
-};
+
 
 // Internship Registration model
 const internshipRegistrationSchema = new mongoose.Schema({
@@ -186,10 +174,6 @@ app.get('/internships/:username', async (req, res) => {
     }
   });
 
-// Protected dashboard route
-app.get('/dashboard', verifyToken, (req, res) => {
-    res.json({ message: `Welcome to the dashboard, ${req.user.username}` });
-});
 
 // Start server
 app.listen(PORT, () => {

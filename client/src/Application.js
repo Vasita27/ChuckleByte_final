@@ -66,7 +66,7 @@ const ApplicationPage = ({ theme, toggleTheme }) => {
     
     const handleRegister = (internshipId) => {
       console.log(internshipId);
-      navigate(`/register/${internshipId}/${username}`); // Pass the internship ID as a route parameter
+      navigate(`/register/${internshipId}`); // Pass the internship ID as a route parameter
     };
     
   const handleToggle = () => {
@@ -78,8 +78,10 @@ const ApplicationPage = ({ theme, toggleTheme }) => {
   return (
     <div className={`application-page ${theme}`}>
     <div className="toggle-wrapper d-flex align-items-center ms-3">
+            
               <FontAwesomeIcon
                 icon={faSun}
+                style={{ color: "orange" }}
                 className={`theme-icon ${isToggled ? 'hidden' : ''}`}
                 size="lg"
               />
@@ -91,7 +93,7 @@ const ApplicationPage = ({ theme, toggleTheme }) => {
               </div>
               <FontAwesomeIcon
                 icon={faMoon}
-                style={{ color: "black" }}
+                style={{ color: "blue" }}
                 className={`theme-icon ${isToggled ? '' : 'hidden'}`}
                 size="lg"
               />

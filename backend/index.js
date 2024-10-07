@@ -92,23 +92,32 @@ const upload = multer({ storage });
 // Login route
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
+
     try {
+        // Find the user by username
         const user = await User.findOne({ username });
+
+        // If the user doesn't exist, return an error
         if (!user) {
             return res.status(400).json({ message: 'User not found' });
         }
 
+        // Compare the provided password with the stored hashed password
         const isMatch = await bcrypt.compare(password, user.password);
+
         if (isMatch) {
-            const token = jwt.sign({ email: user.email, username: user.username }, JWT_SECRET, { expiresIn: '1h' });
-            return res.json({ token });
+            // Passwords match, authentication successful
+            return res.status(200).json({ message: 'Login successful' });
         } else {
+            // Passwords don't match
             return res.status(400).json({ message: 'Invalid credentials' });
         }
     } catch (error) {
+        // Handle any errors during the process
         res.status(500).json({ message: 'Error logging in: ' + error.message });
     }
 });
+
 app.post('/api/client-gathering', async (req, res) => {
     try {
       const clientData = new Client(req.body);

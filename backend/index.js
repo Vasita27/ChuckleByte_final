@@ -151,7 +151,7 @@ app.post('/signup', async (req, res) => {
 });
 
 // Registration route for internships
-app.post('/api/register/:internship', upload.single('resume'), async (req, res) => {
+app.post('/api/register', upload.single('resume'), async (req, res) => {
     const { name, email, internshipId, phone, college, department } = req.body;
 
     try {

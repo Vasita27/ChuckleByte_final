@@ -36,11 +36,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route
             path="/dashboard"
-            element={
-              <PrivateRoute>
-                <DashboardPreview theme={theme} toggleTheme={toggleTheme} />
-              </PrivateRoute>
-            }
+            element={<DashboardPreview theme={theme} toggleTheme={toggleTheme} />}
           />
               <Route path="/application" element={<ApplicationPage theme={theme} toggleTheme={toggleTheme}/>} />
               <Route path="/register/:internshipId" element={<RegisterForm  theme={theme} toggleTheme={toggleTheme}/>} />

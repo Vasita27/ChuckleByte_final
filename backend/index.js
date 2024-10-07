@@ -154,6 +154,7 @@ app.post('/signup', async (req, res) => {
 app.post('/api/register', upload.single('resume'), async (req, res) => {
     const { name, email, internshipId, phone, college, department } = req.body;
     console.log("received request")
+   res.status(201).json({ message: 'Registration successful!' });
     try {
         const newRegistration = new InternshipRegistration({
             name,

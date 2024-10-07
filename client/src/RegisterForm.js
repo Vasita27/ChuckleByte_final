@@ -44,6 +44,7 @@ const RegisterForm = () => {
     for (const key in formData) {
       formDataToSend.append(key, formData[key]);
     }
+console.log('Form Data:', formDataToSend);
 
     try {
       // Send the form data to the backend API

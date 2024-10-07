@@ -153,8 +153,14 @@ app.post('/signup', async (req, res) => {
 // Registration route for internships
 app.post('/api/register', upload.single('resume'), async (req, res) => {
     const { name, email, internshipId, phone, college, department } = req.body;
-    
+
     try {
+        // Check if resume file is present
+        if (!req.file) {
+            return res.status(400).json({ message: 'Resume file is required' });
+        }
+
+        // Create a new internship registration
         const newRegistration = new InternshipRegistration({
             name,
             email,
@@ -162,15 +168,16 @@ app.post('/api/register', upload.single('resume'), async (req, res) => {
             phone,
             college,
             department,
-            resume: req.file.path, // Save the file path
+            resume: req.file.path, // Save the uploaded file path
         });
 
         await newRegistration.save();
         res.status(201).json({ message: 'Registration successful!' });
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        res.status(500).json({ message: `Registration failed: ${error.message}` });
     }
 });
+
 app.get('/internships/:username', async (req, res) => {
     const username = req.params.username;
     console.log(username)

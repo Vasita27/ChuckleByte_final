@@ -46,16 +46,17 @@ const RegisterForm = () => {
         }
 
         try {
+             console.log('Form Data while submission:', formData); 
             const response = await axios.post('https://final-task-c.vercel.app/api/register', formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-
+console.log("processing request")
             setSuccess('Registration successful!');
             alert("Registration Successful");
             console.log('Response:', response.data);
-            navigate("/dashboard", { state: { user } });
+            navigate("/dashboard");
         } catch (error) {
             console.error('Error during registration:', error);
             setError('Registration failed. Please try again.');

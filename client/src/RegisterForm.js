@@ -44,10 +44,14 @@ const RegisterForm = () => {
         for (const key in formData) {
             formDataToSend.append(key, formData[key]);
         }
-
+console.log('Form Data just before while submission:', formData); 
         try {
              console.log('Form Data while submission:', formData); 
-            const response = await axios.post('https://final-task-c.vercel.app/api/register', formDataToSend);
+            const response = await axios.post('https://final-task-c.vercel.app/api/register', formDataToSend, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
 console.log("processing request")
             setSuccess('Registration successful!');
             alert("Registration Successful");

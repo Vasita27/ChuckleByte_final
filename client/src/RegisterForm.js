@@ -4,7 +4,7 @@ import axios from 'axios';
 import './register.css'; // Add your CSS file for styling
 
 const RegisterForm = () => {
-    const { internshipId, user } = useParams();
+    const { internshipId } = useParams();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -12,7 +12,6 @@ const RegisterForm = () => {
         phone: '',
         college: '',
         department: '',
-        resume: null,
     });
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -24,35 +23,26 @@ const RegisterForm = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleFileChange = (e) => {
-        setFormData({ ...formData, resume: e.target.files[0] });
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         console.log('Form Data before submission:', formData); // Debugging line
 
-        if (!formData.name || !formData.email || !formData.internshipId || !formData.phone || !formData.college || !formData.department || !formData.resume) {
+        // Check if all required fields are filled
+        if (!formData.name || !formData.email || !formData.internshipId || !formData.phone || !formData.college || !formData.department) {
             setError('Please fill in all required fields.');
             return;
         } else {
             setError('');
         }
 
-        const formDataToSend = new FormData();
-        for (const key in formData) {
-            formDataToSend.append(key, formData[key]);
-        }
-console.log('Form Data just before while submission:', formData); 
         try {
-             console.log('Form Data while submission:', formData); 
-            const response = await axios.post('https://final-task-c.vercel.app/api/register', formDataToSend, {
+            const response = await axios.post('https://final-task-c.vercel.app/api/register', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
-                }
+                    'Content-Type': 'application/json', // Set the content type as JSON
+                },
             });
-console.log("processing request")
+
             setSuccess('Registration successful!');
             alert("Registration Successful");
             console.log('Response:', response.data);
@@ -123,15 +113,6 @@ console.log("processing request")
                             type="text"
                             name="department"
                             onBlur={handleBlur} // Using onBlur to set value
-                            required
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Upload Resume</label>
-                        <input
-                            type="file"
-                            name="resume"
-                            onChange={handleFileChange} // Keep this for file upload
                             required
                         />
                     </div>

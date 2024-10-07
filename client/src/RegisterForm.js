@@ -47,11 +47,7 @@ const RegisterForm = () => {
 
         try {
              console.log('Form Data while submission:', formData); 
-            const response = await axios.post('https://final-task-c.vercel.app/api/register', formDataToSend, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            });
+            const response = await axios.post('https://final-task-c.vercel.app/api/register', formDataToSend);
 console.log("processing request")
             setSuccess('Registration successful!');
             alert("Registration Successful");

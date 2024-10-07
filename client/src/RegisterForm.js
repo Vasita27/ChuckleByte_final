@@ -47,7 +47,7 @@ const RegisterForm = () => {
 
     try {
       // Send the form data to the backend API
-      const response = await axios.post('http://localhost:5000/api/register', formDataToSend, {
+      const response = await axios.post('https://final-task-c.vercel.app/api/register', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -35,7 +35,7 @@ const SignupForm = () => {
 
     try {
       // Send a POST request to the signup endpoint
-      const response = await axios.post('http://localhost:5000/signup', {
+      const response = await axios.post('https://final-task-c.vercel.app/signup', {
         name,
         username,
         email,

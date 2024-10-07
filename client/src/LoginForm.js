@@ -11,28 +11,27 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    try {
-      // Make API call to the backend for login
-      const response = await axios.post('https://final-task-c.vercel.app/login', {
-        username,
-        password,
-      });
+  try {
+    // Make API call to the backend for login
+    const response = await axios.post('https://final-task-c.vercel.app/login', {
+      username,
+      password,
+    });
 
-      // Assuming the backend returns a token on successful login
-      const { token } = response.data;
-
-      // Store token in localStorage
-      localStorage.setItem('token', token);
-
+    // No token is used, check if the login is successful from the response
+    if (response.status === 200) {
       // Navigate to the dashboard
       navigate('/dashboard', { state: { username } });
-    } catch (err) {
-      // Handle error from the API
-      setError(err.response?.data?.message || 'Login failed. Please try again.');
+    } else {
+      setError('Login failed. Please try again.');
     }
-  };
+  } catch (err) {
+    // Handle error from the API
+    setError(err.response?.data?.message || 'Login failed. Please try again.');
+  }
+};
 
   return (
     <div className='login'>

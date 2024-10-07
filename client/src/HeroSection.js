@@ -14,7 +14,7 @@ const HeroSection = ({ theme, toggleTheme }) => {
       navigate("/login")
     }
     const handleClickTwo=()=>{
-      navigate("/register")
+      navigate("/signup")
     }
 
     const handle=()=>{

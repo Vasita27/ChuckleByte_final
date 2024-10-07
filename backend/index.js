@@ -153,7 +153,7 @@ app.post('/signup', async (req, res) => {
 // Registration route for internships
 app.post('/api/register', upload.single('resume'), async (req, res) => {
     const { name, email, internshipId, phone, college, department } = req.body;
-    
+    console.log("received request")
     try {
         const newRegistration = new InternshipRegistration({
             name,
@@ -164,8 +164,9 @@ app.post('/api/register', upload.single('resume'), async (req, res) => {
             department,
             resume: req.file.path, // Save the file path
         });
-
+ console.log("received request 2")
         await newRegistration.save();
+       console.log("received request 3")
         res.status(201).json({ message: 'Registration successful!' });
     } catch (error) {
         res.status(400).json({ message: error.message });

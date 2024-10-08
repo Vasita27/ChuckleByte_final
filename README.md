@@ -21,8 +21,7 @@ The goal of this project is to design and develop a landing page that:
 4. **Client Gathering Section**: Dedicated area for potential clients to learn about our services and submit their information through a lead capture form.
 5. **Login & Signup Pages**: Secure and user-friendly pages for user registration and login, complete with form validation.
 6. **User Dashboard Preview**: A preview section demonstrating the features users can expect once logged in, including user profiles and notifications.
-7. **SEO Optimization**: Proper HTML structure, meta tags, and fast loading times for search engine optimization.
-8. **GitHub Repository**: Maintains all source code, a clear README file, and instructions for running the project.
+7. **GitHub Repository**: Maintains all source code, a clear README file.
 
 ## Technologies Used
 - **React**: For building the user interface.

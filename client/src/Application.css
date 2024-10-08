@@ -1,72 +1,98 @@
 .application-page {
-    padding: 20px;
-    background-color: #EEEEEE; /* Optional background color */
-  }
-  .application-page.dark{
-    background-color:#1E1E1E;
-  }
-  
-  .internship-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping to next line */
-    justify-content: center; /* Center align the cards */
-  }
-  
+  padding: 20px;
+  background-color: #EEEEEE; /* Optional background color */
+}
+
+.application-page.dark {
+  background-color: #1E1E1E;
+}
+
+.internship-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to next line */
+  justify-content: center; /* Center align the cards */
+}
+
+.internship-box {
+  border: 2px solid #929AAB; /* Border around the card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding inside the box */
+  margin: 15px; /* Margin between boxes */
+  text-align: center; /* Center text */
+  width: 320px; /* Fixed width for uniformity */
+  height: 400px; /* Fixed height for uniformity */
+  position: relative; /* For image positioning */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+}
+
+.internship-box.dark h3 {
+  color: #EEEEEE;
+}
+
+.headers.dark {
+  color: #EEEEEE;
+}
+
+.internship-image {
+  width: 100px; /* Set width of the image */
+  height: 100px; /* Set height of the image */
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Cover the entire area */
+  margin-bottom: 15px; /* Space below the image */
+  position: absolute; /* Position the image at the top */
+  top: 20px; /* Adjust as needed */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the image */
+}
+
+.internship-box h3 {
+  margin-top: 120px; /* Space below the image */
+}
+
+.register-button {
+  padding: 10px 20px; /* Padding for the button */
+  background-color: #929AAB; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.register-button:hover {
+  background-color: #5d5e61; /* Darker shade on hover */
+}
+
+/* Additional styling to provide space between rows */
+.internship-container > div {
+  margin-bottom: 30px; /* Space after each row */
+}
+
+/* Add gap after the first row */
+.internship-container > div:nth-child(4n) {
+  margin-bottom: 50px; /* Increase gap after the first row */
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
   .internship-box {
-    border: 2px solid #929AAB; /* Border around the card */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding inside the box */
-    margin: 15px; /* Margin between boxes */
-    text-align: center; /* Center text */
-    width: 320px; /* Fixed width for uniformity */
-    height: 400px; /* Fixed height for uniformity */
-    position: relative; /* For image positioning */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual */
+      width: 90%; /* Adjust width to take up most of the screen */
+      margin: 10px 0; /* Margin between boxes in the column */
   }
 
-  .internship-box.dark h3{
-    color: #EEEEEE;
+  .internship-container {
+      flex-direction: column; /* Stack cards vertically on small screens */
+      align-items: center; /* Center cards horizontally */
   }
-  .headers.dark{
-    color: #EEEEEE;
-  }
-  .internship-image {
-    width: 100px; /* Set width of the image */
-    height: 100px; /* Set height of the image */
-    border-radius: 50%; /* Circular image */
-    object-fit: cover; /* Cover the entire area */
-    margin-bottom: 15px; /* Space below the image */
-    position: absolute; /* Position the image at the top */
-    top: 20px; /* Adjust as needed */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center the image */
-  }
-  
-  .internship-box h3 {
-    margin-top: 120px; /* Space below the image */
-  }
-  
-  .register-button {
-    padding: 10px 20px; /* Padding for the button */
-    background-color: #929AAB; /* Button background color */
-    color: white; /* Button text color */
-    border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners for button */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-  }
-  
-  .register-button:hover {
-    background-color: #5d5e61; /* Darker shade on hover */
-  }
-  
-  /* Additional styling to provide space between rows */
-  .internship-container > div {
-    margin-bottom: 30px; /* Space after each row */
-  }
-  
-  /* Add gap after the first row */
-  .internship-container > div:nth-child(4n) {
-    margin-bottom: 50px; /* Increase gap after the first row */
-  }
-  
+}
+.toggle-wrapper {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the toggle button horizontally */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 20px; /* Space below the toggle button */
+}
+
+.application-page h2 {
+  text-align: center; /* Center the title text */
+}
+

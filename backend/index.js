@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS setup
 app.use(cors({
-  origin: ["https://final-task-chucklebyte-qohm.vercel.app"],
+  origin: ["*"],
   methods: ["POST", "GET"],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
